@@ -1,4 +1,4 @@
-# Find out which package specified binary is bundled in on a RHEL system
+### Attempt to find out which package specified binary is bundled in on a RHEL system
 
 Usage:
 ```
