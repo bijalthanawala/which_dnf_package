@@ -1,7 +1,7 @@
 #! /bin/env sh
 
 usage() {
-    echo "---------------------------------------------------"
+    echo "-----------------------------------------------------------"
     echo "Usage:"
     echo "$0 <binary name>"
     echo ""
@@ -12,8 +12,8 @@ usage() {
     echo "Last metadata expiration check: 1:05:01 ago on Mon Nov  3 02:41:15 2025."
     echo "net-tools-0:2.0-0.64.20160912git.el9.x86_64"
     echo ""
-    echo "Note: Specify full binary name -or- wildcard within quotes"
-    echo "----------------------------------------------------"
+    echo "Note: Specify full binary names -or- wildcard(s) within quotes"
+    echo "-----------------------------------------------------------"
 
 }
 
@@ -29,9 +29,14 @@ if [ "$1" = "--help" ] || [ "$1" = "-h" ] || [ "$1" = "-?" ] ; then
     exit 0
 fi
 
-binary="$1"
-dnf provides /bin/${binary} /sbin/${binary}
-# Prefixes /bin/ and /sbin/ in the above commands are essential because of the dnf behaviour.
+binaries=""
+for binary in $*; do
+    binaries="${binaries} /bin/${binary} /sbin/${binary}"
+done
+echo Running: dnf provides ${binaries}
+dnf provides ${binaries}
+
+# Prefixes /bin/ and /sbin/ in the above command is essential because of the dnf behaviour.
 # Without the prefixes, dns stops the search if a package name matches the specified name
 # and then we only get list of packages matching the name and not the files.
 #

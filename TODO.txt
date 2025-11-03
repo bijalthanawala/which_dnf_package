@@ -5,6 +5,7 @@ TODO
 
 DONE
 - Support --help command line switch
+- Support searching up multiple binaries
 
 NOT REQUIRED WITH THE NEW METHOD
 - Consider discovering all bin directories dynamically like following and utilize its output to build the repoquery command

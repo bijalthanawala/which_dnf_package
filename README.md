@@ -81,3 +81,60 @@ Matched from:
 Filename    : /usr/sbin/usermod
 Filename    : /usr/sbin/useradd
 ```
+
+Example #4:
+```
+./which_dnf_package.sh ss netstat ps ping man locate
+```
+
+Example #4 output:
+```
+Running: dnf provides /bin/ss /sbin/ss /bin/netstat /sbin/netstat /bin/ps /sbin/ps /bin/ping /sbin/ping /bin/man /sbin/man /bin/locate /sbin/locate
+Last metadata expiration check: 0:19:38 ago on Mon Nov  3 13:19:49 2025.
+iproute-6.11.0-1.el9.x86_64 : Advanced IP routing and network device configuration tools
+Repo        : baseos
+Matched from:
+Filename    : /usr/sbin/ss
+
+iputils-20210202-11.el9_6.3.x86_64 : Network monitoring tools including ping
+Repo        : baseos
+Matched from:
+Filename    : /usr/sbin/ping
+Provide    : /bin/ping
+
+iputils-20210202-11.el9_6.3.x86_64 : Network monitoring tools including ping
+Repo        : baseos
+Matched from:
+Filename    : /usr/sbin/ping
+Provide    : /bin/ping
+
+man-db-2.9.3-7.el9.x86_64 : Tools for searching and reading man pages
+Repo        : baseos
+Matched from:
+Filename    : /usr/bin/man
+
+mandoc-1.14.6-2.el9.x86_64 : A suite of tools for compiling mdoc and man
+Repo        : epel
+Matched from:
+Filename    : /usr/bin/man
+
+mlocate-0.26-30.el9.x86_64 : An utility for finding files by name
+Repo        : baseos
+Matched from:
+Filename    : /usr/bin/locate
+
+net-tools-2.0-0.64.20160912git.el9.x86_64 : Basic networking tools
+Repo        : baseos
+Matched from:
+Filename    : /usr/bin/netstat
+
+procps-ng-3.3.17-14.el9.i686 : System and process monitoring utilities
+Repo        : baseos
+Matched from:
+Provide    : /bin/ps
+
+procps-ng-3.3.17-14.el9.x86_64 : System and process monitoring utilities
+Repo        : baseos
+Matched from:
+Provide    : /bin/ps
+```
