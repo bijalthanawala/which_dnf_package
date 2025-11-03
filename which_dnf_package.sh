@@ -38,11 +38,11 @@ dnf provides ${binaries}
 
 # Prefixes /bin/ and /sbin/ in the above command is essential because of the dnf behaviour.
 # Without the prefixes, dns stops the search if a package name matches the specified name
-# and then we only get list of packages matching the name and not the files.
+# and then we only get list of packages matching the name and not of the files.
 #
 # e.g.
 #     dnf provides "nets*"
-# gives -->
+# gives the undesired -->
 # Last metadata expiration check: 4:18:16 ago on Mon Nov  3 02:41:15 2025.
 # netsniff-ng-0.6.8-11.el9.x86_64 : Packet sniffing beast
 # Repo        : epel
@@ -58,7 +58,7 @@ dnf provides ${binaries}
 #
 # while
 #     dnf provides /bin/nets* sbin/nets*
-# gives  -->
+# gives the desired  -->
 # Last metadata expiration check: 10:22:58 ago on Mon Nov  3 02:41:15 2025.
 # net-tools-2.0-0.64.20160912git.el9.x86_64 : Basic networking tools
 # Repo        : baseos
