@@ -1,6 +1,9 @@
 which_dnf_package
 
 TODO
+- Support --help command line switch
+
+NOT REQUIRED WITH THE NEW METHOD
 - Consider discovering all bin directories dynamically like following and utilize its output to build the repoquery command
   (find / -maxdepth 3 -type d -name sbin -o -name bin 2>/dev/null)
 - Use 'which' command, if available, to confirm the presence of repoquery
