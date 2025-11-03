@@ -19,7 +19,7 @@ usage() {
 
 if [ -z "$1" ]; then
     echo "Usage error: Missing binary name."
-    echo "Specify a binary to locate in dnf packages"
+    echo "Specify a binary to locate in dnf packages."
     usage
     exit 1
 fi
@@ -27,16 +27,17 @@ fi
 dnf list --installed yum-utils >/dev/null 2>&1
 status=$? 
 if [ $status -ne 0 ]; then
-    echo "[-] repoquery (package yum-utils) is not installed"
-    echo "Install package yum-utils and then re-run this script"
+    echo "Package yum-utils is not installed."
+    echo "Please install package yum-utils and then re-run this script."
     exit 1
 fi
 
-if [ ! -f /bin/repoquery ]; then
-    echo "Unexpected error: Command repoquery not found in the path"
-    #exit 1
+REPOQ_FULLPATH="/bin/repoquery"
+if [ ! -f "${REPOQ_FULLPATH}" ]; then
+    echo "Unexpected error: Command ${REPOQ_FULLPATH} not found."
+    exit 1
 fi
 
 binary=$1
-repoquery /bin/${binary} /sbin/${binary} /usr/bin/${binary} /usr/sbin/${binary}
+${REPOQ_FULLPATH} /bin/${binary} /sbin/${binary} /usr/bin/${binary} /usr/sbin/${binary}
 
