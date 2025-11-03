@@ -1,0 +1,2 @@
+- Consider discovering all bin directories dynamically like following and utilize its output to build the repoquery command
+  (find / -maxdepth 3 -type d -name sbin -o -name bin 2>/dev/null)
