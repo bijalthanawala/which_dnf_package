@@ -24,8 +24,10 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-
+if [ "$1" = "--help" ] || [ "$1" = "-h" ] || [ "$1" = "-?" ] ; then
+    usage
+    exit 0
+fi
 
 binary="$1"
 dnf provides /bin/${binary} /sbin/${binary}
-

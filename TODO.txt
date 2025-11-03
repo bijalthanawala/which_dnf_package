@@ -1,6 +1,9 @@
 which_dnf_package
 
 TODO
+- Nothing as of now
+
+DONE
 - Support --help command line switch
 
 NOT REQUIRED WITH THE NEW METHOD
